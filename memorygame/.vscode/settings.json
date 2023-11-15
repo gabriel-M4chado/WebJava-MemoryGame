@@ -3,5 +3,6 @@
     "cSpell.words": [
         "memorygame",
         "Servlet"
-    ]
+    ],
+    "java.compile.nullAnalysis.mode": "automatic"
 }

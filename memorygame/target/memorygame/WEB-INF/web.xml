@@ -10,4 +10,8 @@
     <servlet-name>servlet</servlet-name>
     <url-pattern>/api</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>servlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
 </web-app>
