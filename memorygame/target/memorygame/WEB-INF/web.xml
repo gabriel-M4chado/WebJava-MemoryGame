@@ -4,7 +4,7 @@
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>servlet</servlet-name>
-    <servlet-class>com.memorygame.Servlet</servlet-class>
+    <servlet-class>com.memorygame.controller.Servlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>servlet</servlet-name>
