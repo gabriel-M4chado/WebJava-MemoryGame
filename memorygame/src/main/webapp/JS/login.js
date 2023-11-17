@@ -14,20 +14,22 @@ function login(username, password) {
         body: new URLSearchParams(data),
     };
 
-    // Perform the login request
     fetch(apiUrl, options)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(html => {
-            console.log('Login successful:', html);
+    .then(response => {
+        const successRedirect = response.headers.get('Success-Redirect');
+        if (successRedirect) {
+            window.location.href = successRedirect;
+        }
 
-            document.body.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('Login error:', error.message);
-        });
+        return response.text();
+    })
+    .then(message => {
+        console.log('Login result:', message);
+        if (!message.includes('Login Successful')) {
+            alert('Login failed. Please check your credentials.');
+        }
+    })
+    .catch(error => {
+        console.error('Login error:', error.message);
+    });
 }

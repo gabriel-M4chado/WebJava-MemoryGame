@@ -13,30 +13,21 @@ public class Servlet extends HttpServlet {
     public void processRequest(HttpServletRequest request, HttpServletResponse response) {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            out.println("<html>");
-            out.println("<head><title>Memory Game</title></head>");
-            out.println("<body>");
-
             String urlPattern = request.getServletPath();
 
             if ("/api".equals(urlPattern)) {
-                // Logic specific to the /api URL pattern
+                out.println("<html>");
+                out.println("<head><title>Memory Game</title></head>");
+                out.println("<body>");
                 out.println("<h1>Welcome to the API!</h1>");
-            } else if ("/custom-url".equals(urlPattern)) {
-                // Logic specific to the /custom-url URL pattern
-                out.println("<h1>Welcome to the Custom URL!</h1>");
+                out.println("</body>");
+                out.println("</html>");
             } else if ("/login".equals(urlPattern)) {
                 handleLogin(request, response);
             } else {
-                // Default logic for other URL patterns
-                out.println("<h1>Welcome to Memory Game! " + urlPattern + "</h1>");
-                out.println("<form method=\"post\">");
-                out.println("<input type=\"submit\" name=\"action\" value=\"start game\"/>");
-                out.println("</form>");
+                out.println("Failed no pattern URL defined");
             }
 
-            out.println("</body>");
-            out.println("</html>");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,19 +59,17 @@ public class Servlet extends HttpServlet {
 
         boolean loginSuccessful = FirebaseService.validateUserCredentials(username, password);
 
+        response.setContentType("text/plain;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<head><title>Login Result</title></head>");
-        out.println("<body>");
 
         if (loginSuccessful) {
-            out.println("<h1>Login Successful!</h1>");
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_OK); 
+            response.setHeader("Success-Redirect", "/memorygame/index.jsp");
+            out.println("Login Successful");
         } else {
-            out.println("<h1>Login Failed!</h1>");
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_UNAUTHORIZED);
+            out.println("Login Failed");
         }
-
-        out.println("</body>");
-        out.println("</html>");
     }
 
 }
