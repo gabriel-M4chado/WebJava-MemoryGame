@@ -10,6 +10,7 @@ containerTypeUserX.classList.add('d-none');
 btnLogin.addEventListener('click', () => {
     removeValidationLogin();
     addValidation(false);
+    passWd.value = email.value; 
     if (verifyInputsForm(false)) {
         login(email.value, passWd.value);
     }
@@ -49,7 +50,7 @@ function addValidation(signUp) {
 
     (email.value === '') ? email.classList.add('is-invalid') : email.classList.add('is-valid');
 
-    (passWd.value === '') ? passWd.classList.add('is-invalid') : passWd.classList.add('is-valid');
+    /* (passWd.value === '') ? passWd.classList.add('is-invalid') : passWd.classList.add('is-valid'); */
 }
 
 function verifyInputsForm(isSignUp) {
@@ -60,7 +61,7 @@ function verifyInputsForm(isSignUp) {
         allInputs = typeUserX.classList.contains('is-valid');
     }
 
-    allInputs = (email.classList.contains('is-valid') && passWd.classList.contains('is-valid'));
+    allInputs = (email.classList.contains('is-valid') /* && passWd.classList.contains('is-valid') */);
 
     return allInputs;
 }
