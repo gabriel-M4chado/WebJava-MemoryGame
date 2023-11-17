@@ -40,11 +40,15 @@ public class FirebaseService {
         return FirebaseDatabase.getInstance().getReference();
     }
 
-
     public static boolean validateUserCredentials(String username, String password) {
         try {
             // Replace this with your Firebase authentication logic
             FirebaseAuth.getInstance().getUserByEmail(username);
+            /*
+             * FirebaseAuth.getInstance().signInWithEmailAndPassword(username, password); =
+             * The method signInWithEmailAndPassword(String, String) is undefined for the
+             * type FirebaseAuthJava
+             */
             return true; // Successful login
         } catch (FirebaseAuthException e) {
             // Log the exception or handle it as needed

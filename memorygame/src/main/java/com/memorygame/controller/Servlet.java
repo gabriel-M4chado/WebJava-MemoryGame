@@ -4,11 +4,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
 
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthException;
 import com.memorygame.service.FirebaseService;
 
-import jakarta.servlet.http.HttpServletResponse;
 
 public class Servlet extends jakarta.servlet.http.HttpServlet {
     public void processRequest(jakarta.servlet.http.HttpServletRequest request,

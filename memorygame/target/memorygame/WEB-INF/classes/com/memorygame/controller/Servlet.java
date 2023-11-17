@@ -1,4 +1,4 @@
-package com.memorygame;
+package com.memorygame.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
