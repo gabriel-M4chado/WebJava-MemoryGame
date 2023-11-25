@@ -5,6 +5,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthException;
+import com.google.firebase.auth.UserRecord;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,6 +53,21 @@ public class FirebaseService {
             // Log the exception or handle it as needed
             e.printStackTrace();
             return false; // Failed login
+        }
+    }
+
+    public static boolean registerUser(String email, String password) {
+        try {
+            UserRecord.CreateRequest request = new UserRecord.CreateRequest()
+                    .setEmail(email)
+                    .setPassword(password);
+
+            UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
+
+            return userRecord != null;
+        } catch (FirebaseAuthException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

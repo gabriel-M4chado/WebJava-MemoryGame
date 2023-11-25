@@ -34,7 +34,7 @@ btnSignUP.addEventListener('click', () => {
     addValidation(true);
     document.querySelector('.mb-0').classList.add('d-none');
     if (verifyInputsForm(false)) {
-        login(email.value, passWd.value, 'login');
+        login(email.value, passWd.value, 'signup');
     }
 });
 

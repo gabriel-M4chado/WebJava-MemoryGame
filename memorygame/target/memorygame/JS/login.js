@@ -31,5 +31,10 @@ function login(username, password, type) {
     })
     .catch(error => {
         console.error('Login error:', error.message);
+    })
+    .finally(() => {
+        setTimeout(() => {
+            console.log('Procede login');
+        }, 30000);
     });
 }

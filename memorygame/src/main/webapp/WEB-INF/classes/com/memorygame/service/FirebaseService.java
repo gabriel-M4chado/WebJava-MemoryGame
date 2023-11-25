@@ -3,6 +3,7 @@ package com.memorygame.service;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
+import com.google.firebase.auth.UserRecord;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -54,6 +55,22 @@ public class FirebaseService {
             // Log the exception or handle it as needed
             e.printStackTrace();
             return false; // Failed login
+        }
+    }
+
+
+    public static boolean registerUser(String email, String password) {
+        try {
+            UserRecord.CreateRequest request = new UserRecord.CreateRequest()
+                    .setEmail(email)
+                    .setPassword(password);
+
+            UserRecord userRecord = FirebaseAuth.getInstance().createUser(request);
+
+            return userRecord != null;
+        } catch (FirebaseAuthException e) {
+            e.printStackTrace();
+            return false;
         }
     }
 

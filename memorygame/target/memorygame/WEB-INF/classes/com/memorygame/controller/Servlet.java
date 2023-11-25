@@ -24,6 +24,8 @@ public class Servlet extends HttpServlet {
                 out.println("</html>");
             } else if ("/login".equals(urlPattern)) {
                 handleLogin(request, response);
+            } else if ("/signup".equals(urlPattern)) {
+                handleSignUp(request, response);
             } else {
                 out.println("Failed no pattern URL defined");
             }
@@ -63,12 +65,47 @@ public class Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         if (loginSuccessful) {
-            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_OK); 
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_OK);
             response.setHeader("Success-Redirect", "/memorygame/index.jsp");
             out.println("Login Successful");
         } else {
             response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_UNAUTHORIZED);
             out.println("Login Failed");
+        }
+    }
+
+    private void handleSignUp(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
+
+        // String email = request.getParameter("email");
+
+        PrintWriter out = response.getWriter();
+
+        if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_BAD_REQUEST);
+            out.println("SignUp Failed");
+            return;
+        }
+
+        if (FirebaseService.validateUserCredentials(username)) {
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_CONFLICT);
+            out.println("O nome já existe");
+            return;
+        }
+
+        boolean registrationSuccessful = FirebaseService.registerUser(username, password);
+
+        response.setContentType("text/plain;charset=UTF-8");
+
+        if (registrationSuccessful) {
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_CREATED); // 201 Created
+            response.setHeader("Success-Redirect", "/memorygame/index.jsp");
+            out.println("Registration Successful");
+        } else {
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 500 Internal
+                                                                                                   // Server Error
+            out.println("Registration Failed");
         }
     }
 
