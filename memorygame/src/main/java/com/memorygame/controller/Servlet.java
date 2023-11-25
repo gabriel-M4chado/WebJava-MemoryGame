@@ -17,12 +17,7 @@ public class Servlet extends jakarta.servlet.http.HttpServlet {
             String urlPattern = request.getServletPath();
 
             if ("/api".equals(urlPattern)) {
-                out.println("<html>");
-                out.println("<head><title>Memory Game</title></head>");
-                out.println("<body>");
-                out.println("<h1>Welcome to the API!</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                response.sendRedirect("/memorygame/game.html");
             } else if ("/login".equals(urlPattern)) {
                 handleLogin(request, response);
             } else if ("/signup".equals(urlPattern)) {
@@ -81,8 +76,6 @@ public class Servlet extends jakarta.servlet.http.HttpServlet {
             jakarta.servlet.http.HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        // String email = request.getParameter("email");
 
         PrintWriter out = response.getWriter();
 

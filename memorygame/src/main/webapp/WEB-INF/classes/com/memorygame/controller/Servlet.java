@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import com.memorygame.service.FirebaseService;
 
 public class Servlet extends HttpServlet {
@@ -16,12 +17,7 @@ public class Servlet extends HttpServlet {
             String urlPattern = request.getServletPath();
 
             if ("/api".equals(urlPattern)) {
-                out.println("<html>");
-                out.println("<head><title>Memory Game</title></head>");
-                out.println("<body>");
-                out.println("<h1>Welcome to the API!</h1>");
-                out.println("</body>");
-                out.println("</html>");
+                response.setHeader("Success-Redirect", "/memorygame/game.html");
             } else if ("/login".equals(urlPattern)) {
                 handleLogin(request, response);
             } else if ("/signup".equals(urlPattern)) {
@@ -65,11 +61,11 @@ public class Servlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         if (loginSuccessful) {
-            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_OK);
+            response.setStatus(HttpServletResponse.SC_OK);
             response.setHeader("Success-Redirect", "/memorygame/index.jsp");
             out.println("Login Successful");
         } else {
-            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_UNAUTHORIZED);
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
             out.println("Login Failed");
         }
     }
@@ -77,8 +73,6 @@ public class Servlet extends HttpServlet {
     private void handleSignUp(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-
-        // String email = request.getParameter("email");
 
         PrintWriter out = response.getWriter();
 

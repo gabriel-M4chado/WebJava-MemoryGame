@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <link rel="stylesheet" href="styles/fipcard.css">
+    <script src="JS/flipcardGame.js"></script>
 </head>
 
 <body>
+    <div id="stopwatch">00:00:00</div>
     <div class="card-container">
-        <div class="card">
+        <div class="card" data-card="1">
             <div class="content">
                 <div class="front">
                     Front 1
@@ -21,7 +23,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-card="2">
             <div class="content">
                 <div class="front">
                     Front 2
@@ -32,7 +34,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-card="3">
             <div class="content">
                 <div class="front">
                     Front 3
@@ -43,7 +45,7 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card" data-card="2">
             <div class="content">
                 <div class="front">
                     Front 4
@@ -54,6 +56,13 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        <div class="score-container" id="scoreContainer">
+            <div id="score">Score: 0</div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
