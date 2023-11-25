@@ -1,5 +1,5 @@
-function login(username, password) {
-    const apiUrl = 'http://localhost:8383/memorygame/login';
+function login(username, password, type) {
+    const apiUrl = `http://localhost:8383/memorygame/${type}`;
 
     const data = {
         username: username,

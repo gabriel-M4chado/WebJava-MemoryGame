@@ -12,26 +12,27 @@ btnLogin.addEventListener('click', () => {
     addValidation(false);
     passWd.value = email.value; 
     if (verifyInputsForm(false)) {
-        login(email.value, passWd.value);
+        login(email.value, passWd.value, 'login');
     }
 });
 
 const btnSignUPText = document.getElementById('btnSignUPText');
 btnSignUPText.addEventListener('click', () => {
     const titleLoginScreen = document.getElementById('titleLoginScreen');
-
+    const textSigup = document.querySelector('.mb-0');
     removeValidationLogin();
 
     btnLogin.style.display = 'none';
     btnSignUP.classList.remove('d-none');
     containerTypeUserX.classList.remove('d-none');
     titleLoginScreen.textContent = 'sing up';
+    textSigup.classList.add('d-none');
+    document.querySelector('#textDataLogin').textContent = 'Enter your login details';
 });
 
 btnSignUP.addEventListener('click', () => {
     addValidation(true);
     document.querySelector('.mb-0').classList.add('d-none');
-    document.querySelector('#textDataLogin').textContent = 'Enter your login details';
 });
 
 
