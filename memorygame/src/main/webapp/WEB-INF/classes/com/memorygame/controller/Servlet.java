@@ -3,7 +3,6 @@ package com.memorygame.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
-
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -97,8 +96,7 @@ public class Servlet extends HttpServlet {
             response.setHeader("Success-Redirect", "/memorygame/index.jsp");
             out.println("Registration Successful");
         } else {
-            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 500 Internal
-                                                                                                   // Server Error
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 500 Internal Server Error
             out.println("Registration Failed");
         }
     }

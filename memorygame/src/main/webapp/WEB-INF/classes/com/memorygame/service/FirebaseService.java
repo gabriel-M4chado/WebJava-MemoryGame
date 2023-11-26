@@ -9,7 +9,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -43,18 +42,16 @@ public class FirebaseService {
 
     public static boolean validateUserCredentials(String username, String password) {
         try {
-            // Replace this with your Firebase authentication logic
             FirebaseAuth.getInstance().getUserByEmail(username);
             /*
              * FirebaseAuth.getInstance().signInWithEmailAndPassword(username, password); =
              * The method signInWithEmailAndPassword(String, String) is undefined for the
              * type FirebaseAuthJava
              */
-            return true; // Successful login
+            return true; 
         } catch (FirebaseAuthException e) {
-            // Log the exception or handle it as needed
             e.printStackTrace();
-            return false; // Failed login
+            return false; 
         }
     }
 

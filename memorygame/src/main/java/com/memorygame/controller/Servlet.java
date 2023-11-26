@@ -3,9 +3,7 @@ package com.memorygame.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Logger;
-
 import com.memorygame.service.FirebaseService;
-
 import jakarta.servlet.http.HttpServletResponse;
 
 public class Servlet extends jakarta.servlet.http.HttpServlet {
@@ -100,8 +98,7 @@ public class Servlet extends jakarta.servlet.http.HttpServlet {
             response.setHeader("Success-Redirect", "/memorygame/index.jsp");
             out.println("Registration Successful");
         } else {
-            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 500 Internal
-                                                                                                   // Server Error
+            response.setStatus(jakarta.servlet.http.HttpServletResponse.SC_INTERNAL_SERVER_ERROR); // 500 Internal Server Error
             out.println("Registration Failed");
         }
     }
