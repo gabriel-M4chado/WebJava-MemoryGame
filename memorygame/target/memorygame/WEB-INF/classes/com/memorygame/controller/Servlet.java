@@ -74,8 +74,6 @@ public class Servlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        // String email = request.getParameter("email");
-
         PrintWriter out = response.getWriter();
 
         if (username == null || password == null || username.isEmpty() || password.isEmpty()) {
