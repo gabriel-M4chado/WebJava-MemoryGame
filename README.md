@@ -16,4 +16,4 @@ After downloading the project, navigate to the `memorygame` folder, run the comm
 </ol>
 
 
-View Readme.md in Portuguese [HERE](portuguese-readme.md).
+<p>View Readme.md in Portuguese <a href="PORTUGUESE-README.md">[HERE]</a></p>
