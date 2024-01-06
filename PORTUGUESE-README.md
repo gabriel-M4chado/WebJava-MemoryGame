@@ -1,7 +1,7 @@
 # Jogo de Memória - Desenvolvimento Web
 
 ## Tecnologias usadas
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,docker)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,docker)](https://skillicons.dev) ![https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png](https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png)
 
 Com base no [app desenvolvido de jogo de memória](https://github.com/eumanito/jogo-memoria-andoid-kotlin), foi seguido o mesmo conceito. Diferentemente do projeto original em Kotlin, este projeto utiliza outras tecnologias e emprega o paradigma de Programação Orientada a Objetos (POO) em Java.
 ---
