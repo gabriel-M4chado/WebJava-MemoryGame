@@ -1,8 +1,7 @@
-# POO2
- Programação Orientada Objetos 2
+# Jogo de memória - Desenvolvimento Web usando HTML, CSS, JS, Java, Servlet e docker.
 
 
- # com base no [app desenvolvido de jogo de memoria](https://github.com/eumanito/jogo-memoria-andoid-kotlin), foi seguido o mesmo conseito , ou seja, ao inves de de ser em kotlin , foi utilizado html, css, Js e Java com os conceitos de POO2
+# Esse pequeno projeto usou como base no [app desenvolvido de jogo de memoria](https://github.com/eumanito/jogo-memoria-andoid-kotlin), foi seguido o mesmo conseito , ou seja, ao invés de ser em kotlin , foi utilizado html, css, Js, Java, Servlet, docker e  os conceitos orientação a objetos
 <hr>
 #Como executar
 <ol>
