@@ -1,7 +1,7 @@
 # Memory Game - Web Development
 
 ## Technologies Used
-[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,docker)](https://skillicons.dev) ![https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png](https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png)
+[![My Skills](https://skillicons.dev/icons?i=js,html,css,java,docker)](https://skillicons.dev) ![https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png](https://icons.iconarchive.com/icons/icons8/windows-8/48/Files-Jsp-icon.png) ![https://icons.iconarchive.com/icons/pictogrammers/material/48/firebase-icon.png](https://icons.iconarchive.com/icons/pictogrammers/material/48/firebase-icon.png)
 
 Based on the [memory game app developed](https://github.com/eumanito/jogo-memoria-andoid-kotlin), the same concept was followed. Instead of using Kotlin, other technologies were employed, and Java was utilized with the object-oriented programming (OOP) concept.
 
